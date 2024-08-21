@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useOutletContext } from "react-router-dom";
 import axios from "axios";
 
 const Login = () => {
@@ -11,6 +11,7 @@ const Login = () => {
 
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const { setIsAuthenticated } = useOutletContext(); // Access the setIsAuthenticated function
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -18,7 +19,7 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError(""); // Clear previous errors
+    setError("");
 
     try {
       const response = await axios.post("/myApi/users/login", formData, {
@@ -26,6 +27,10 @@ const Login = () => {
       });
 
       console.log("User logged in:", response.data);
+
+      // Store the token and set authentication state
+      localStorage.setItem("token", response.data.data.refreshToken);
+      setIsAuthenticated(true);
 
       // Redirect to dashboard after successful login
       navigate("/dashboard");
