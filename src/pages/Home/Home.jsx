@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 
 const Home = () => {
   const navigate = useNavigate();
+  
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
       <header className="w-full bg-blue-600 py-4">
