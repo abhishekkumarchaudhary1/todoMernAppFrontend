@@ -50,7 +50,7 @@ const TrashedTodos = () => {
           onClick={() => navigate("/dashboard/activetodos")}
           className="px-4 py-2 text-xs md:text-sm bg-green-500 text-white rounded"
         >
-          Back to All Todos
+          Back to Active Todos
         </button>
       </div>
       <h2 className="text-2xl font-bold mb-4">Trashed Todos</h2>

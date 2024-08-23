@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useOutletContext } from "react-router-dom";
 import axios from "axios";
 
+// import useAuth from '../../hooks/useAuth';
+
 const Dashboard = () => {
   const [user, setUser] = useState(null);
   const [error, setError] = useState("");
@@ -13,6 +15,7 @@ const Dashboard = () => {
   const navigate = useNavigate();
 
   const { setIsAuthenticated } = useOutletContext(); // Access the setIsAuthenticated function
+  // const { isAuthenticated, logout } = useAuth();
 
   useEffect(() => {
     const checkAuthentication = async () => {
@@ -44,6 +47,8 @@ const Dashboard = () => {
   const handleLogout = async () => {
     try {
       await axios.post("/myApi/users/logout", {}, { withCredentials: true });
+      // logout();
+      
       setUser(null);
       localStorage.removeItem("token");
       console.log("user logged out");

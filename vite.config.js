@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/myApi': {
-        target: 'http://localhost:8000/api/v1',
+        target: 'https://todomernappbackend-8fju.onrender.com/api/v1',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/myApi/, ''),
       },
