@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/myApi': {
-        target: 'https://todomernappbackend-8fju.onrender.com/api/v1',
+        target: `${import.meta.env.VITE_BASE_URL}api/v1`,
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/myApi/, ''),
       },
