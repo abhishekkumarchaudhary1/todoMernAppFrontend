@@ -9,7 +9,7 @@ const TrashedTodos = () => {
   useEffect(() => {
     const fetchTrashedTodos = async () => {
       try {
-        const response = await axios.get("/myApi/todo/fetch-trashed-todos", { withCredentials: true });
+        const response = await axios.get("https://todomernappbackend-8fju.onrender.com/api/v1/todo/fetch-trashed-todos", { withCredentials: true });
         setTodos(response.data.data);
       } catch (err) {
         console.error("Failed to fetch todos:", err);
@@ -21,7 +21,7 @@ const TrashedTodos = () => {
 
   const handleRetrieve = async (id) => {
     try {
-      await axios.post(`/myApi/todo/retrieve-todo/${id}`, {}, { withCredentials: true });
+      await axios.post(`https://todomernappbackend-8fju.onrender.com/api/v1/todo/retrieve-todo/${id}`, {}, { withCredentials: true });
       setTodos(todos.filter(todo => todo._id !== id));
     } catch (err) {
       console.error("Failed to retrieve todo:", err);
@@ -30,7 +30,7 @@ const TrashedTodos = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`/myApi/todo/delete-todo/${id}`, { withCredentials: true });
+      await axios.delete(`https://todomernappbackend-8fju.onrender.com/api/v1/todo/delete-todo/${id}`, { withCredentials: true });
       setTodos(todos.filter(todo => todo._id !== id));
     } catch (err) {
       console.error("Failed to delete todo:", err);

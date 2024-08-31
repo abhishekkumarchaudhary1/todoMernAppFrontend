@@ -16,7 +16,7 @@ const ActiveTodos = () => {
 
   const fetchTodos = async () => {
     try {
-      const response = await axios.get("/myApi/todo/fetch-active-todos", {
+      const response = await axios.get("https://todomernappbackend-8fju.onrender.com/api/v1/todo/fetch-active-todos", {
         withCredentials: true,
       });
       setTodos(response.data.data);
@@ -46,7 +46,7 @@ const ActiveTodos = () => {
 
   const handleDelete = async (todoId) => {
     try {
-      await axios.delete(`/myApi/todo/delete-todo/${todoId}`, {
+      await axios.delete(`https://todomernappbackend-8fju.onrender.com/api/v1/todo/delete-todo/${todoId}`, {
         withCredentials: true,
       });
       fetchTodos();
@@ -90,7 +90,7 @@ const ActiveTodos = () => {
 
   const handleMoveToTrash = async (todoId) => {
     try {
-      await axios.post(`/myApi/todo/trash-todo/${todoId}`, {}, {
+      await axios.post(`https://todomernappbackend-8fju.onrender.com/api/v1/todo/trash-todo/${todoId}`, {}, {
         withCredentials: true,
       });
       fetchTodos();

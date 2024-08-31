@@ -46,7 +46,7 @@ const Dashboard = () => {
 
   const handleLogout = async () => {
     try {
-      await axios.post("/myApi/users/logout", {}, { withCredentials: true });
+      await axios.post("https://todomernappbackend-8fju.onrender.com/api/v1/users/logout", {}, { withCredentials: true });
       // logout();
       
       setUser(null);
@@ -78,7 +78,7 @@ const Dashboard = () => {
     formData.append("avatar", avatar);
 
     try {
-      await axios.post("/myApi/users/update-user-avatar", formData, {
+      await axios.post("https://todomernappbackend-8fju.onrender.com/api/v1/users/update-user-avatar", formData, {
         headers: { "Content-Type": "multipart/form-data" },
         withCredentials: true,
       });
