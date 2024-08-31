@@ -20,7 +20,7 @@ const Dashboard = () => {
   useEffect(() => {
     const checkAuthentication = async () => {
       try {
-        const response = await axios.get("/myApi/users/get-current-user", {
+        const response = await axios.get("https://todo-mern-app-by-abhishek.netlify.app/users/get-current-user", {
           withCredentials: true,
         });
 
@@ -63,7 +63,7 @@ const Dashboard = () => {
   const handleAccountUpdate = async () => {
     try {
       await axios.post(
-        "/myApi/users/update-account-details",
+        "https://todomernappbackend-8fju.onrender.com/api/v1/users/update-account-details",
         accountDetails,
         { withCredentials: true }
       );

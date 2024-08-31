@@ -40,7 +40,7 @@ const Register = () => {
       form.append("avatar", formData.avatar);
       form.append("password", formData.password);
 
-      const response = await axios.post("/myApi/users/register", form, {
+      const response = await axios.post("https://todo-mern-app-by-abhishek.netlify.app/users/register", form, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

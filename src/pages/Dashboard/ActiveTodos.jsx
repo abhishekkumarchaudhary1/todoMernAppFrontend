@@ -33,7 +33,7 @@ const ActiveTodos = () => {
   const handleSave = async (todoId) => {
     try {
       await axios.post(
-        `/myApi/todo/update-todo/${todoId}`,
+        `https://todomernappbackend-8fju.onrender.com/api/v1/todo/update-todo/${todoId}`,
         editingTodoData,
         { withCredentials: true }
       );
@@ -60,7 +60,7 @@ const ActiveTodos = () => {
     if (receiverUserId) {
       try {
         await axios.post(
-          `/myApi/todo/share-todo/${todoId}`,
+          `https://todomernappbackend-8fju.onrender.com/api/v1/todo/share-todo/${todoId}`,
           { receiverUserId },
           { withCredentials: true }
         );
@@ -74,7 +74,7 @@ const ActiveTodos = () => {
   const handleAddTodo = async () => {
     try {
       await axios.post(
-        "/myApi/todo/create-todo",
+        "https://todomernappbackend-8fju.onrender.com/api/v1/todo/create-todo",
         newTodo,
         {
           withCredentials: true,
