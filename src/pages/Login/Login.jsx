@@ -22,9 +22,16 @@ const Login = () => {
     setError("");
 
     try {
-      const response = await axios.post("/myApi/users/login", formData, {
+      //local deployment
+      // const response = await axios.post("/myApi/users/login", formData, {
+      //   withCredentials: true,
+      // });
+
+      //netlify deployment
+      const response = await axios.post("https://todomernappbackend-8fju.onrender.com/api/v1/users/login", formData, {
         withCredentials: true,
       });
+      
 
       console.log("User logged in:", response.data);
 
