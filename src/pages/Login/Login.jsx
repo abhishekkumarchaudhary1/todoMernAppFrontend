@@ -43,8 +43,7 @@ const Login = () => {
       //netlify
       // Store the token and set authentication state
       localStorage.setItem("token", response.data.data.refreshToken);
-      localStorage.setItem("test123", 'sample test text in local storage');
-      setIsAuthenticated(true);
+      localStorage.setItem("test123fromLogin.jsx", 'sample test text in local storage in Login');
       console.log("token trying to set ", response.data.data.refreshToken);
       
 

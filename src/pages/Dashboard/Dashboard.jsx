@@ -20,6 +20,8 @@ const Dashboard = () => {
   useEffect(() => {
     const checkAuthentication = async () => {
       try {
+        localStorage.setItem("test123fromDashboard.jsx", 'sample test text in local storage in Dashboard');
+
         const response = await axios.get("https://todomernappbackend-8fju.onrender.com/api/v1/users/get-current-user", {
           withCredentials: true,
         });
