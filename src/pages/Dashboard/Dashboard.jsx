@@ -23,6 +23,8 @@ const Dashboard = () => {
         const response = await axios.get("https://todomernappbackend-8fju.onrender.com/api/v1/users/get-current-user", {
           withCredentials: true,
         });
+        console.log("Response from dashboard", response);
+        
 
         if (response.data.data) {
           setUser(response.data.data);
