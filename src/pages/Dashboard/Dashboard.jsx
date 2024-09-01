@@ -21,7 +21,7 @@ const Dashboard = () => {
     const checkAuthentication = async () => {
       try {
         const response = await axios.get("https://todomernappbackend-8fju.onrender.com/api/v1/users/get-current-user", {
-          withCredentials: false,
+          withCredentials: true,
         });
 
         if (response.data.data) {
