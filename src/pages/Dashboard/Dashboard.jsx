@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useOutletContext } from "react-router-dom";
 import axios from "axios";
+const { setIsAuthenticated } = useOutletContext(); // Access the setIsAuthenticated function
 
 // import useAuth from '../../hooks/useAuth';
 
@@ -14,7 +15,6 @@ const Dashboard = () => {
   const [avatar, setAvatar] = useState(null);
   const navigate = useNavigate();
 
-  const { setIsAuthenticated } = useOutletContext(); // Access the setIsAuthenticated function
   // const { isAuthenticated, logout } = useAuth();
 
   useEffect(() => {
