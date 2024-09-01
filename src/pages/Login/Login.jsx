@@ -35,9 +35,18 @@ const Login = () => {
 
       console.log("User logged in:", response.data);
 
+      //local deployment
+      // Store the token and set authentication state
+      // localStorage.setItem("token", response.data.data.refreshToken);
+      // setIsAuthenticated(true);
+
+      //netlify
       // Store the token and set authentication state
       localStorage.setItem("token", response.data.data.refreshToken);
+      localStorage.setItem("token", response.data.data.refreshToken);
       setIsAuthenticated(true);
+      console.log("token trying to set ", response.data.data.refreshToken);
+      
 
       // Redirect to dashboard after successful login
       navigate("/dashboard");
